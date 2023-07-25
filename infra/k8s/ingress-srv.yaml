@@ -24,15 +24,17 @@ spec:
                 name: query-srv
                 port:
                   number: 4003
-          - path: posts/?(.*)/comments
+          - path: /posts/?(.*)/comments
             pathType: ImplementationSpecific
             backend:
               service:
                 name: comments-srv
-                port: 4002
+                port: 
+                  number: 4002
           - path: /?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: client-srv
-                port: 3000
+                port: 
+                  number: 3000
